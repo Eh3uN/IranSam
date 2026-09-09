@@ -18,7 +18,7 @@ async function startApp() {
   app.innerHTML = `
     <div class="app-state" role="status">
       <img class="app-state-logo" src="${publicPath('images/iran-sam-logo.webp')}" alt="ایران سام" width="96" height="96">
-      <p class="app-state-title">اولین روز تو در ایران سام</p>
+      <p class="app-state-title">یک قدم تا حرفه‌ای بودن</p>
       <span class="app-spinner" aria-hidden="true"></span>
       <p class="app-state-message">داریم در رو برات باز می‌کنیم…</p>
     </div>`;

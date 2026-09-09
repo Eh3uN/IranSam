@@ -22,18 +22,11 @@
   transform:translate(-3px,3px);
 }
 
-.hero-actions {
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:10px 24px;
-}
-
-.hero-actions .text-link,.training-next {
+.training-next {
   color:#e2e9f0;
 }
 
-.hero-actions .text-link:hover,.training-next:hover {
+.training-next:hover {
   color:var(--orange);
 }
 

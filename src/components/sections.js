@@ -9,9 +9,7 @@ function renderButton(cta, outline = false) {
 function renderDetails(section, brand) {
   switch (section.type) {
     case 'hero':
-      return `<div class="hero-actions">${renderButton(section.cta)}
-          <a class="text-link" href="#${e(section.secondaryCta.target)}">${e(section.secondaryCta.label)} ${arrow}</a>
-        </div>
+      return `${renderButton(section.cta)}
         <div class="hero-note"><span class="outline-number">${e(section.ageHighlight)}</span><span>${e(brand.ageUnit)}<br><strong>${e(section.ageCaption)}</strong></span></div>`;
     case 'entrance':
       return `<div class="entrance-note"><span class="note-index" dir="ltr">${e(section.note.tag)}</span><p>${lines(section.note.lines)}</p></div>

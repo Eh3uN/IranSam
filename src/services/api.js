@@ -23,10 +23,8 @@ export function validateSiteData(data) {
       publicPath(section.image?.desktop);
       publicPath(section.image?.mobile);
     }
-    for (const cta of [section.cta, section.secondaryCta]) {
-      if (cta && (!sectionIds.includes(cta.target) || !isText(cta.label))) {
-        throw new Error('Invalid section destination');
-      }
+    if (section.cta && (!sectionIds.includes(section.cta.target) || !isText(section.cta.label))) {
+      throw new Error('Invalid section destination');
     }
     const nav = data.navigation[index];
     if (nav.id !== section.id || !isText(nav.label) || !isText(nav.mobileLabel)) throw new Error('Invalid navigation');
@@ -38,7 +36,7 @@ export function validateSiteData(data) {
   if (!Array.isArray(data.sections[3].drills) || !data.sections[3].drills.length || !data.sections[3].drills.every(drill => isText(drill.title) && isText(drill.description))) {
     throw new Error('Invalid training content');
   }
-  if (!data.sections[0].secondaryCta || !data.sections[3].cta) throw new Error('Missing development links');
+  if (!data.sections[0].cta || !data.sections[3].cta) throw new Error('Missing section links');
   const development = data.sections[4];
   if (!isText(development.principle) || !Array.isArray(development.services) || !development.services.length || !development.services.every(service => isText(service.icon) && isText(service.title) && isText(service.description))) {
     throw new Error('Invalid development services');
