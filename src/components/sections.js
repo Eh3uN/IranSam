@@ -23,7 +23,7 @@ function renderDetails(section, brand) {
         <p class="locker-invitation">${e(section.invitation)}</p>
         ${renderButton(section.cta)}`;
     case 'training':
-      return `<div class="drill-list" aria-label="آشنایی با مهارت‌های فوتبال">
+      return `<div class="drill-list" aria-label="سرفصل‌های آموزش و تمرین">
         ${section.drills.map((drill, index) => `
           <details ${index === 0 ? 'open' : ''}>
             <summary><span class="drill-number" dir="ltr">${counter(index)}</span><span>${e(drill.title)}</span><span class="details-sign" aria-hidden="true"></span></summary>
