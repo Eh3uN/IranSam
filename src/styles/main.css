@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "./site.css";
+@import "./development.css";
+
+@theme {
+  --color-brand-navy: #071a2c;
+  --color-brand-ink: #06182a;
+  --color-brand-orange: #ff8210;
+  --font-vazirmatn: "Vazirmatn", Tahoma, Arial, sans-serif;
+}
+
+/* Fetch API loading/error states. Page content is rendered from site.json. */
+.app-state {
+  @apply min-h-svh flex flex-col items-center justify-center gap-5 px-6 py-16 text-center bg-brand-navy text-white;
+}
+.app-state-title {
+  @apply text-2xl font-bold leading-relaxed;
+}
+.app-state-message {
+  @apply max-w-md text-base leading-loose text-slate-300;
+}
+.app-state-logo {
+  @apply w-24 h-24 rounded-lg;
+}
+.app-spinner {
+  @apply size-6 rounded-full border-2 border-white/20 border-t-brand-orange motion-safe:animate-spin;
+}
