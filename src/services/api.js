@@ -1,4 +1,5 @@
 import { publicPath } from '../utils/paths.js';
+import { validateContactData } from '../utils/contact.js';
 
 const sectionIds = ['intro', 'entrance', 'locker', 'training', 'development', 'progress'];
 const sectionTypes = ['hero', 'entrance', 'locker', 'training', 'development', 'progress'];
@@ -53,6 +54,7 @@ export function validateSiteData(data) {
     throw new Error('Invalid progress report');
   }
   if (!isLines(data.closing?.description) || !isText(data.loader?.title)) throw new Error('Invalid closing or loading content');
+  validateContactData(data.contact);
   return data;
 }
 

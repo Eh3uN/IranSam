@@ -3,7 +3,9 @@ import { fetchSiteData } from './services/api.js';
 import { renderHeader, renderLoader, renderMobileNavigation } from './components/header.js';
 import { renderSections } from './components/sections.js';
 import { renderFooter } from './components/footer.js';
+import { renderContact } from './components/contact.js';
 import { initializeExperience } from './features/experience.js';
+import { initializeContact } from './features/contact.js';
 import { publicPath } from './utils/paths.js';
 
 const app = document.querySelector('#app');
@@ -28,9 +30,11 @@ async function startApp() {
       ${renderLoader(data)}
       ${renderHeader(data)}
       <main id="main-content">${renderSections(data)}${renderFooter(data)}</main>
-      ${renderMobileNavigation(data.navigation)}`;
+      ${renderMobileNavigation(data.navigation)}
+      ${renderContact(data)}`;
     app.setAttribute('aria-busy', 'false');
     initializeExperience();
+    initializeContact();
     if (window.location.hash) {
       document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ behavior: 'auto' });
     }

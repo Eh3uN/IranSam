@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./site.css";
 @import "./development.css";
+@import "./contact.css";
 
 @theme {
   --color-brand-navy: #071a2c;

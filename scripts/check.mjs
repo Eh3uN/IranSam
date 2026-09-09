@@ -4,12 +4,13 @@ import { validateSiteData } from '../src/services/api.js';
 import { renderSections } from '../src/components/sections.js';
 import { renderHeader, renderMobileNavigation, renderLoader } from '../src/components/header.js';
 import { renderFooter } from '../src/components/footer.js';
+import { renderContact } from '../src/components/contact.js';
 
 const root = new URL('../', import.meta.url);
 const data = validateSiteData(JSON.parse(await readFile(new URL('public/data/site.json', root), 'utf8')));
 const assets = [data.brand.logo, ...data.sections.flatMap(section => section.image ? [section.image.desktop, section.image.mobile] : [])];
 await Promise.all(assets.map(path => access(new URL(`public/${path}`, root))));
-const html = renderHeader(data) + renderLoader(data) + renderSections(data) + renderFooter(data) + renderMobileNavigation(data.navigation);
+const html = renderHeader(data) + renderLoader(data) + renderSections(data) + renderFooter(data) + renderMobileNavigation(data.navigation) + renderContact(data);
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 assert.equal(new Set(ids).size, ids.length, 'Duplicate HTML ids');
 for (const [, target] of html.matchAll(/href="#([^"]+)"/g)) {
