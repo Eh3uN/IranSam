@@ -38,12 +38,11 @@ export function validateSiteData(data) {
   }
   if (!data.sections[0].cta || !data.sections[3].cta) throw new Error('Missing section links');
   const development = data.sections[4];
-  if (!isText(development.principle) || !Array.isArray(development.services) || !development.services.length || !development.services.every(service => isText(service.icon) && isText(service.title) && isText(service.description))) {
-    throw new Error('Invalid development services');
+  if (!isText(development.routeLabel) || !isText(development.routeEnd) || !Array.isArray(development.stations) || development.stations.length !== 7 || !development.stations.every(station => isText(station?.title) && isText(station?.description) && isText(station?.image?.alt))) {
+    throw new Error('Invalid development route');
   }
-  if (!development.cta || !['title', 'description', 'label'].every(key => isText(development.facilities?.[key]))) {
-    throw new Error('Invalid training facilities');
-  }
+  development.stations.forEach(station => publicPath(station.image.src));
+  if (!development.cta) throw new Error('Missing development destination');
   const progress = data.sections[5];
   if (!isText(progress.familyNote) || !['prefix', 'value', 'unit', 'title', 'description'].every(key => isText(progress.cadence?.[key]))) {
     throw new Error('Invalid assessment cadence');

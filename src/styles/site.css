@@ -297,6 +297,18 @@ h1 em,h2 em {
   display:inline-block
 }
 
+.heading-continuation {
+  display:block;
+  font:inherit;
+  color:inherit
+}
+
+.locker-scene h2 {
+  font-size:clamp(22px,2.7vw,40px);
+  line-height:1.65;
+  color:var(--white)
+}
+
 .scene-description {
   font-size:clamp(16px,1.35vw,20px);
   font-weight:350;
@@ -525,7 +537,8 @@ h1 em,h2 em {
 }
 
 .training-copy .scene-description {
-  margin-bottom:18px
+  margin-bottom:18px;
+  color:var(--white)
 }
 
 .drill-list {
@@ -780,6 +793,13 @@ details[open] .details-sign:after {
   animation:sceneArrival .75s ease-out both
 }
 
+@media(min-width:1101px) {
+  .entrance-scene .scene-description {
+    width:min(58vw,760px);
+    max-width:none
+  }
+}
+
 @media(min-width:1600px) {
   .scene-copy {
     max-width:700px
@@ -987,6 +1007,9 @@ details[open] .details-sign:after {
   }
   .locker-scene {
     min-height:950px
+  }
+  .locker-scene h2 {
+    font-size:clamp(20px,5.4vw,28px)
   }
   .locker-scene .scene-body {
     padding-top:clamp(360px,100vw,700px)

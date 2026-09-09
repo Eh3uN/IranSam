@@ -47,26 +47,35 @@
 }
 
 .development-section {
-  color:var(--navy);
-  background:#f4f3ee;
-  border-top:4px solid var(--orange);
+  color:var(--white);
+  background:radial-gradient(ellipse at 90% 12%,rgba(255,130,16,.055),transparent 32%),radial-gradient(ellipse at 8% 55%,#12324a,transparent 52%),var(--navy);
+  border-top:1px solid rgba(255,255,255,.12);
+}
+
+.development-pitch {
+  position:absolute;
+  z-index:-1;
+  left:3%;
+  top:110px;
+  width:min(44vw,560px);
+  height:auto;
+  color:#a7bfd3;
+  opacity:.1;
+  transform:rotate(-12deg);
+  pointer-events:none;
 }
 
 .development-intro {
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  align-items:end;
-  gap:48px;
   margin-bottom:48px;
 }
 
 .development-section .eyebrow {
-  color:#52616c;
+  color:#c0cedb;
 }
 
 .development-section .chapter-tag {
-  color:#a64a00;
-  border-color:#c99970;
+  color:var(--orange);
+  border-color:rgba(255,130,16,.6);
 }
 
 .development-section h2,.progress-section h2 {
@@ -76,139 +85,236 @@
 }
 
 .development-section h2 em {
-  color:#a64a00;
+  color:var(--orange);
 }
 
-.development-intro-copy>p:first-child {
+.development-intro-copy {
+  margin-top:34px;
+}
+
+.development-intro-copy>p {
   font-size:17px;
   line-height:2.1;
-  max-width:480px;
-  color:#465560;
-  margin-bottom:22px;
+  max-width:680px;
+  color:#d0dbe5;
+  margin-bottom:0;
 }
 
-.development-principle {
+.journey-caption {
   display:flex;
-  align-items:baseline;
-  gap:10px;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding-block:20px;
+  border-block:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(270deg,rgba(255,255,255,.025),transparent);
+}
+
+.journey-caption p {
+  display:flex;
+  align-items:center;
+  gap:12px;
   margin:0;
   font-size:14px;
   font-weight:650;
 }
 
-.development-principle>span {
-  color:#a64a00;
+.journey-caption p>span {
+  width:7px;
+  height:7px;
+  flex:none;
+  border-radius:50%;
+  background:var(--orange);
+  box-shadow:0 0 14px rgba(255,130,16,.4);
 }
 
-.service-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:1px;
-  border:1px solid #dcded9;
-  background:#dcded9;
+.journey-range {
+  font:12px/1.5 Arial,sans-serif;
+  color:#adbfce;
+  letter-spacing:.12em;
 }
 
-.service-card {
+.facility-journey {
+  --portrait-size:clamp(160px,18vw,220px);
+  list-style:none;
+  margin:28px auto 0;
+  padding:0;
+  max-width:1120px;
+}
+
+.journey-station {
   position:relative;
-  padding:30px 30px 34px;
-  background:#fcfcf9;
-  transition:background .25s;
-}
-
-.service-card:hover {
-  background:#fff;
-}
-
-.service-card-top {
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  margin-bottom:24px;
+  min-height:320px;
+  direction:ltr;
 }
 
-.service-icon {
+.journey-connector {
+  position:absolute;
+  pointer-events:none;
+  left:0;
+  top:50%;
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+
+.journey-connector path {
+  stroke:var(--orange);
+  stroke-width:1.75;
+  stroke-dasharray:5 8;
+  stroke-linecap:round;
+  vector-effect:non-scaling-stroke;
+  opacity:.7;
+  filter:drop-shadow(0 0 4px rgba(255,130,16,.2));
+}
+
+.journey-station:nth-child(even) .journey-connector {
+  transform:scaleX(-1);
+}
+
+.journey-curve-mobile {
+  display:none;
+}
+
+.journey-portrait {
+  position:absolute;
+  z-index:1;
+  left:76%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:var(--portrait-size);
+  height:var(--portrait-size);
+  padding:10px;
+  border:1px solid rgba(255,130,16,.45);
+  border-radius:50%;
+  background:#0b2237;
+  box-shadow:0 0 0 7px rgba(7,26,44,.75),0 0 0 8px rgba(192,213,231,.12),0 18px 45px rgba(0,0,0,.3);
+  transition:border-color .25s,box-shadow .25s;
+}
+
+.journey-portrait:after {
+  content:"";
+  position:absolute;
+  inset:-9px;
+  border:2px solid transparent;
+  border-top-color:var(--orange);
+  border-right-color:rgba(255,130,16,.4);
+  border-radius:50%;
+  transform:rotate(-30deg);
+  pointer-events:none;
+}
+
+.journey-station:nth-child(even) .journey-portrait {
+  left:24%;
+}
+
+.journey-portrait img {
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 8px 24px rgba(0,0,0,.24);
+}
+
+.journey-number {
+  position:absolute;
+  right:3px;
+  bottom:6px;
   display:grid;
   place-items:center;
-  width:50px;
-  height:50px;
-  color:#a64a00;
-  background:#f7eee4;
+  width:38px;
+  height:38px;
+  border:4px solid #0b2237;
   border-radius:50%;
+  background:var(--orange);
+  color:var(--navy);
+  font:700 12px/1 Arial,sans-serif;
 }
 
-.service-icon svg {
-  width:30px;
-  height:30px;
+.journey-copy {
+  position:relative;
+  z-index:1;
+  direction:rtl;
+  width:44%;
+  margin-left:14%;
+  padding-block:16px;
 }
 
-.service-index {
-  font:12px/1 Arial,sans-serif;
-  letter-spacing:.12em;
-  color:#68747c;
+.journey-station:nth-child(even) .journey-copy {
+  margin-left:42%;
 }
 
-.service-card h3,.facilities-copy h3 {
-  margin:0 0 12px;
-  font-size:19px;
+.journey-copy:before {
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  width:26px;
+  height:2px;
+  background:var(--orange);
+  opacity:.8;
+}
+
+.journey-copy h3 {
+  margin:0 0 10px;
+  font-size:clamp(21px,2.15vw,30px);
   font-weight:800;
-  line-height:1.8;
+  line-height:1.7;
+  text-wrap:balance;
 }
 
-.service-card>p {
+.journey-copy p {
+  max-width:410px;
   margin:0;
   font-size:15px;
-  line-height:2.1;
-  color:#52606a;
+  line-height:2;
+  color:#bdcddd;
 }
 
-.facilities-strip {
-  display:flex;
-  align-items:center;
-  gap:26px;
-  margin-top:32px;
-  padding:28px 0;
-  border-bottom:1px solid #d4d8d5;
+.journey-finish {
+  position:relative;
+  text-align:center;
+  margin-top:26px;
+  padding:32px 20px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:6px;
+  background:linear-gradient(120deg,rgba(26,55,78,.6),rgba(7,26,44,.5));
 }
 
-.facilities-icon {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  flex:none;
-  gap:4px;
-  color:#52606a;
-  font-size:11px;
+.journey-finish:before {
+  content:"";
+  position:absolute;
+  top:-1px;
+  left:calc(50% - 32px);
+  width:64px;
+  height:2px;
+  background:var(--orange);
 }
 
-.facilities-icon svg {
-  width:48px;
-  height:48px;
-  color:#a64a00;
+.journey-finish-mark {
+  display:block;
+  width:9px;
+  height:9px;
+  margin:0 auto 18px;
+  background:var(--orange);
+  border-radius:50%;
+  box-shadow:0 0 0 6px #ff821014;
 }
 
-.facilities-copy {
-  flex:1;
+.journey-finish p {
+  margin:0 0 10px;
+  font-size:20px;
+  font-weight:750;
 }
 
-.facilities-copy h3 {
-  margin-bottom:5px;
-  font-size:17px;
+.journey-finish .text-link {
+  color:var(--orange);
 }
 
-.facilities-copy p {
-  max-width:600px;
-  margin:0;
-  font-size:14px;
-  color:#52606a;
-}
-
-.facilities-strip .text-link {
-  flex:none;
-  color:#a64a00;
-}
-
-.facilities-strip .text-link:hover {
-  color:var(--navy);
+.journey-finish .text-link:hover {
+  color:var(--white);
 }
 
 .editorial-bottom {
@@ -217,11 +323,18 @@
 }
 
 .development-section .editorial-bottom,.development-section .scene-count {
-  color:#58646d;
+  color:#aebfd0;
 }
 
 .development-section .scene-count b {
-  color:#a64a00;
+  color:var(--orange);
+}
+
+@media(hover:hover) {
+  .journey-station:hover .journey-portrait {
+    border-color:var(--orange);
+    box-shadow:0 0 0 7px rgba(7,26,44,.75),0 0 0 8px rgba(255,130,16,.3),0 18px 45px rgba(0,0,0,.3),0 0 35px rgba(255,130,16,.12);
+  }
 }
 
 .progress-section {
@@ -418,21 +531,8 @@
 }
 
 @media(max-width:1100px) {
-  .development-intro,.progress-layout {
+  .progress-layout {
     gap:32px;
-  }
-  .service-card {
-    padding:24px;
-  }
-  .service-card h3 {
-    font-size:17px;
-  }
-  .facilities-strip {
-    flex-wrap:wrap;
-    gap:18px;
-  }
-  .facilities-strip .text-link {
-    margin-inline-start:80px;
   }
   .progress-report {
     padding:26px;
@@ -446,9 +546,6 @@
 }
 
 @media(min-width:768px) and (max-width:900px) {
-  .service-grid {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
   .assessment-cadence {
     flex-wrap:wrap;
     gap:12px;
@@ -459,48 +556,85 @@
   .development-section,.progress-section {
     padding:64px var(--page-gutter) 24px;
   }
-  .development-intro,.progress-layout {
+  .progress-layout {
     grid-template-columns:minmax(0,1fr);
     gap:26px;
   }
   .development-intro {
     margin-bottom:30px;
   }
+  .development-pitch {
+    display:none;
+  }
   .development-section h2,.progress-section h2 {
     font-size:clamp(29px,7.4vw,45px);
   }
-  .development-intro-copy>p:first-child,.progress-description {
+  .development-intro-copy>p,.progress-description {
     font-size:16px;
     max-width:none;
   }
-  .development-principle {
-    font-size:13px;
+  .development-intro-copy {
+    margin-top:24px;
   }
-  .service-grid {
-    grid-template-columns:minmax(0,1fr);
+  .journey-caption {
+    gap:12px;
+    padding-block:18px;
   }
-  .service-card {
-    padding:25px;
+  .journey-caption p {
+    font-size:12px;
+    gap:8px;
   }
-  .service-card-top {
-    margin-bottom:16px;
+  .journey-range {
+    font-size:10px;
+    flex:none;
   }
-  .service-card h3 {
-    font-size:19px;
+  .facility-journey {
+    --portrait-size:clamp(88px,25vw,126px);
+    margin-top:12px;
+  }
+  .journey-station {
+    min-height:210px;
+  }
+  .journey-curve-desktop {
+    display:none;
+  }
+  .journey-curve-mobile {
+    display:initial;
+  }
+  .journey-station:nth-child(even) .journey-connector {
+    transform:none;
+  }
+  .journey-portrait,.journey-station:nth-child(even) .journey-portrait {
+    left:80%;
+    padding:5px;
+  }
+  .journey-number {
+    width:29px;
+    height:29px;
+    right:-4px;
+    bottom:-1px;
+    border-width:3px;
+    font-size:10px;
+  }
+  .journey-copy,.journey-station:nth-child(even) .journey-copy {
+    margin-left:0;
+    width:59%;
+  }
+  .journey-copy h3 {
+    font-size:clamp(17px,4.5vw,22px);
+    line-height:1.8;
     margin-bottom:8px;
   }
-  .facilities-strip {
-    align-items:flex-start;
-    margin-top:22px;
-    padding-top:16px;
+  .journey-copy p {
+    font-size:13px;
+    line-height:2;
   }
-  .facilities-copy h3 {
-    font-size:16px;
+  .journey-finish {
+    margin-top:12px;
+    padding:28px 12px;
   }
-  .facilities-strip .text-link {
-    margin-inline-start:0;
-    width:100%;
-    justify-content:space-between;
+  .journey-finish p {
+    font-size:17px;
   }
   .editorial-bottom {
     margin-top:28px;

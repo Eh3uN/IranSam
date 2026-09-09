@@ -8,7 +8,10 @@ import { renderContact } from '../src/components/contact.js';
 
 const root = new URL('../', import.meta.url);
 const data = validateSiteData(JSON.parse(await readFile(new URL('public/data/site.json', root), 'utf8')));
-const assets = [data.brand.logo, ...data.sections.flatMap(section => section.image ? [section.image.desktop, section.image.mobile] : [])];
+const assets = [data.brand.logo, ...data.sections.flatMap(section => [
+  ...(section.image ? [section.image.desktop, section.image.mobile] : []),
+  ...(section.stations?.map(station => station.image.src) ?? []),
+])];
 await Promise.all(assets.map(path => access(new URL(`public/${path}`, root))));
 const html = renderHeader(data) + renderLoader(data) + renderSections(data) + renderFooter(data) + renderMobileNavigation(data.navigation) + renderContact(data);
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);

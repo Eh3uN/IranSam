@@ -1,0 +1,45 @@
+{
+  "mode": "built-in image_gen__imagegen",
+  "intent": "generate",
+  "useCase": "photorealistic-natural",
+  "note": "Representative sports-facility concepts, not documentary photographs of actual Iran Sam facilities or staff.",
+  "optimization": {
+    "format": "webp",
+    "width": 640,
+    "height": 640,
+    "quality": 0.85,
+    "method": "Chrome canvas export"
+  },
+  "assets": [
+    {
+      "file": "public/images/journey-coaches.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: square website facility illustration, to be cropped inside a circle around 200px. Primary request: editorial photographic concept of an experienced football coach planning training. Anonymous adult male coach in a clean navy tracksuit seen from shoulders to hips, face outside frame, holding a football tactical board with simple pitch lines and orange magnetic markers, whistle around neck. A football and a couple of orange training cones on green grass near him. Natural training-ground backdrop softly blurred. Composition: central board and torso occupy the middle 65 percent, all important objects safe for circular crop, square image. Premium realistic sports photography, soft natural daylight, true materials, navy and white with subtle burnt-orange accents. No written words, no logo, no watermark, no diploma, no identifiable real person. This is a representative concept, not a photograph of a specific existing academy. Generate one standalone image.",
+      "original": "node_modules/.cache/journey-originals/journey-coaches.png"
+    },
+    {
+      "file": "public/images/journey-pitches.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: square website facility illustration, later circular crop around 200px. Primary request: premium natural photographic concept of football training pitches. A clean green full-size football pitch with crisp realistic white lines and small white goals, one smaller adjacent football training pitch visible at side, subtle running/walking perimeter and a small navy/orange training area. Slightly elevated diagonal aerial perspective, green pitch and center circle occupy central70 percent, beautiful neatly maintained turf. No athletes, no people, no stadium crowds, no text, no logos, no watermark. Soft daylight and restrained navy-white-orange accents, realistic material texture, believable modest high-quality academy facility rather than huge extravagant stadium. Square image. Representative concept, not a photograph of a named existing academy. Generate one standalone image.",
+      "original": "node_modules/.cache/journey-originals/journey-pitches.png"
+    },
+    {
+      "file": "public/images/journey-pool.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: square website facility illustration, intended for circular crop around 200px. Primary request: clean realistic indoor swimming pool for sports recovery. Bright blue water with crisp black lane markers on pool floor and subtle lane ropes, white tiled edges, tall frosted windows and soft daylight reflections on water, restrained navy fixtures and a very small orange detail such as a folded towel. Elegant but believable modest training facility with no people, no extravagant resort features. View from poolside corner toward central lane water, with central70 percent safe for circular crop. Premium realistic architectural sport photography, natural soft light, calm atmosphere. No written text, numbers, logos or watermark. Square single image. This is a representative concept, not a photograph of a named existing academy.",
+      "original": "node_modules/.cache/journey-originals/journey-pool.png"
+    },
+    {
+      "file": "public/images/journey-gymnastics.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: square photographic illustration for a premium Iranian football academy facilities journey; displayed inside a circular crop around 200 pixels. Primary request: an inviting indoor gymnastics hall, recognizable central suede balance beam with navy padded mats and a pair of wooden gymnastic rings behind it. Scene: clean realistic sports training hall with white upper walls, navy lower walls and subtle orange edging on selected mats. Composition: square photograph, medium-wide eye-level architectural sports photography, all main equipment clearly inside the middle 70 percent of the image to survive circular cropping; uncluttered and easy to read at small size. Lighting: soft daylight from high windows, natural believable shadows, elegant and calm atmosphere. Materials: authentic suede, rubber mats and wood, photorealistic detail. Constraints: no people, no text, no logos, no watermark, no collage, no graphic circular border; illustrative facility concept rather than a documentary image of any actual facility.",
+      "original": "node_modules/.cache/journey-originals/journey-gymnastics.png"
+    },
+    {
+      "file": "public/images/journey-athletics.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: square photographic illustration for a premium Iranian football academy facilities journey; displayed inside a circular crop around 200 pixels. Primary request: indoor athletics hall with an unmistakable rust-red curved running track and crisp white lane markings curving from foreground toward the middle distance. Scene: airy clean indoor sports hall, white structural roof, navy low wall accents and a subtle orange training marker by the side. Composition: square photograph, low-to-medium eye-level architectural sports photography, clear sweeping track curve and vanishing point inside the middle 70 percent of the image so circular cropping remains legible; no crowd or visual clutter. Lighting: soft natural daylight from high windows, realistic shadows and materials, welcoming premium sports atmosphere. Materials: detailed rubber track, steel and painted walls. Constraints: no people, no readable lane numbers, no text, no logos, no watermark, no collage, no graphic circular border; illustrative facility concept rather than a documentary image of any actual facility.",
+      "original": "node_modules/.cache/journey-originals/journey-athletics.png"
+    },
+    {
+      "file": "public/images/journey-strength.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: square photographic illustration for a premium Iranian football academy facilities journey; displayed inside a circular crop around 200 pixels. Primary request: a clean indoor strength and functional fitness training hall, with a compact black dumbbell rack prominently in the center foreground, a sturdy squat rack in the middle background with suspension training straps hanging from its upper bar, and a kettlebell and wooden plyometric box nearby. Scene: realistic uncluttered gym, navy lower walls and white upper walls, charcoal rubber flooring, small orange accents on the equipment and suspension straps; enough equipment to communicate strength, TRX and functional CrossFit training without visual clutter. Composition: square photograph, eye-level medium-wide view, main equipment clearly inside the middle 70 percent of the image to remain readable in a circular crop at small size. Lighting: soft natural daylight through high windows, believable shadows, inviting professional environment. Materials: textured rubber, brushed metal and wood. Constraints: no people, no text, no logos, no brand marks, no watermark, no collage, no graphic circular border; illustrative facility concept rather than a documentary image of any actual facility.",
+      "original": "node_modules/.cache/journey-originals/journey-strength.png"
+    }
+  ]
+}
