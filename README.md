@@ -1,25 +1,119 @@
-# ایران سام — Vite Vanilla
+# Iran Sam Football Academy
 
-سورس سایت تک‌صفحه‌ای آکادمی فوتبال ایران سام؛ از داستان روز اول تا معرفی مسیر جامع رشد و کارنامه پیشرفت. فارسی و راست‌به‌چپ، با رنگ‌های سرمه‌ای، نارنجی و سفید. تصاویر مستقل موبایل و دسکتاپ، فونت محلی و تمام کدها داخل پروژه هستند.
+### وب‌سایت معرفی آکادمی فوتبال ایران سام
 
-این پروژه با قالب `vanilla` دستور زیر آغاز شده است:
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-ff7800?style=flat-square)](https://eh3un.github.io/IranSam/)
+[![Vite](https://img.shields.io/badge/Vite-8-646cff?style=flat-square&logo=vite&logoColor=white)](https://vite.dev/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-f7df1e?style=flat-square&logo=javascript&logoColor=111827)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-06b6d4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-```bash
-npm create vite@latest iran-sam-vite -- --template vanilla
+> A cinematic, RTL-first, single-page experience for Iran Sam Football Academy — designed to turn a QR scan into a guided journey from the academy entrance to the player’s next step.
+
+**[مشاهدهٔ دمو / View Live Demo](https://eh3un.github.io/IranSam/)** · **[مخزن GitHub / Repository](https://github.com/Eh3uN/IranSam)**
+
+---
+
+## فارسی
+
+### معرفی پروژه
+
+ایران سام یک وب‌سایت معرفی تک‌صفحه‌ای برای آکادمی فوتبال ایران سام است؛ با هدف تبدیل یک صفحهٔ معرفی معمولی به تجربه‌ای داستان‌محور و قابل‌تعامل.
+
+کاربر از طریق QR Code وارد یک مسیر هدایت‌شده می‌شود: ابتدا صفحهٔ لودینگ و شروع داستان را می‌بیند، سپس وارد فضای آکادمی، رختکن و سالن تمرین می‌شود و در ادامه با برنامهٔ رشد، امکانات، کارنامهٔ پیشرفت، معرفی آکادمی و راه‌های ارتباطی آشنا می‌شود.
+
+این پروژه برای ردهٔ سنی **۶ تا ۱۵ سال** طراحی شده و هویت بصری آن بر پایهٔ ترکیب **سرمه‌ای، نارنجی و سفید** شکل گرفته است.
+
+### ارزش پروژه برای رزومه
+
+این پروژه نمونه‌ای از تبدیل یک بریف واقعی کارفرما به یک تجربهٔ دیجیتال کامل است و مهارت‌های زیر را نشان می‌دهد:
+
+- طراحی و پیاده‌سازی یک landing page مشتری‌محور با روایت بصری مشخص
+- ساخت تجربهٔ RTL و فارسی با تمرکز بر خوانایی و واکنش‌گرایی
+- تبدیل محتوای ثابت به ساختار داده‌محور با JSON و Fetch API
+- طراحی صحنه‌های مستقل برای دسکتاپ و موبایل
+- پیاده‌سازی لودینگ، ناوبری مرحله‌ای، وضعیت پیشرفت اسکرول و تعامل‌های صفحه
+- ساخت پنل‌های شناور برای ارتباط، پرسش‌های متداول و معرفی آکادمی
+- آماده‌سازی workflow انتشار خودکار روی GitHub Pages
+
+### مسیر تجربهٔ کاربر
+
+| مرحله | توضیح |
+| --- | --- |
+| لودینگ | ورود از QR Code با یک شروع کوتاه و کنجکاوکننده |
+| شروع داستان | معرفی هویت ایران سام و دعوت کاربر به ورود |
+| ورودی آکادمی | ادامهٔ روایت با CTAهای مرحله‌ای |
+| رختکن | معرفی کیت‌های سرمه‌ای، نارنجی و سفید و آماده‌شدن برای تمرین |
+| سالن فوتسال | نمایش فضای تمرین و معرفی محورهای آموزشی |
+| مسیر رشد | ارائهٔ مسیر جامع آموزش و امکانات همراه بازیکن |
+| کارنامهٔ پیشرفت | توضیح شیوهٔ قابل‌مشاهده‌کردن رشد بازیکن |
+| دربارهٔ ایران سام | معرفی آکادمی، مدیریت و نگاه آموزشی مجموعه |
+| ارتباط و پرسش‌های متداول | هدایت خانواده به گفت‌وگوی مستقیم و حضوری |
+
+### قابلیت‌های کلیدی
+
+- رابط کاملاً فارسی و راست‌به‌چپ
+- طراحی واکنش‌گرا برای موبایل، تبلت و دسکتاپ
+- تصویر پس‌زمینهٔ مستقل برای نسخهٔ موبایل و دسکتاپ
+- لایه‌های تیرهٔ جداگانه برای حفظ کنتراست متن روی تصاویر
+- لودینگ اولیه با امکان ورود مستقیم و پشتیبانی از `prefers-reduced-motion`
+- ناوبری مرحله‌ای با نشانگر بخش فعال و progress bar اسکرول
+- رندر محتوای صفحه از فایل محلی `public/data/site.json`
+- پنل‌های `dialog` برای ارتباط و پرسش‌های متداول با بستن از طریق دکمه، Escape و کلیک بیرون پنل
+- لینک مستقیم تماس تلفنی و WhatsApp بدون نیاز به بک‌اند
+- فونت فارسی محلی و توکن‌های رنگی یکپارچه برای هویت برند
+- بررسی ساختار پروژه، تصاویر و لینک‌ها با اسکریپت‌های داخلی
+
+### تکنولوژی‌ها
+
+| تکنولوژی | کاربرد |
+| --- | --- |
+| HTML5 | ساختار معنایی صفحه و محتوای فارسی |
+| CSS3 | طراحی صحنه‌ها، لایه‌های تصویری، انیمیشن و واکنش‌گرایی |
+| Tailwind CSS 4 | توکن‌های طراحی و کلاس‌های پایهٔ رابط |
+| Vanilla JavaScript | رندر کامپوننت‌ها و مدیریت تعامل‌ها |
+| Fetch API | دریافت و اعتبارسنجی محتوای `site.json` |
+| Vite | محیط توسعه، build و آماده‌سازی خروجی استاتیک |
+| GitHub Actions | build و انتشار خودکار روی GitHub Pages |
+
+این پروژه به‌صورت استاتیک اجرا می‌شود و به بک‌اند، دیتابیس، CMS یا کلید API نیاز ندارد.
+
+### ساختار اصلی پروژه
+
+```text
+iran-sam-vite/
+├── public/
+│   ├── data/site.json          # متن‌ها، ناوبری و تنظیمات تجربه
+│   └── images/                 # لوگو و تصاویر موبایل، دسکتاپ و مسیر رشد
+├── src/
+│   ├── components/             # header، صحنه‌ها، footer، درباره و تماس
+│   ├── features/               # رفتار لودینگ، اسکرول و پنل‌های شناور
+│   ├── services/               # Fetch و اعتبارسنجی داده‌ها
+│   ├── styles/                 # Tailwind و استایل‌های اختصاصی پروژه
+│   ├── utils/                  # مسیر فایل‌ها و توابع کمکی
+│   └── main.js                 # نقطهٔ ورود برنامه
+├── scripts/                    # اسکریپت‌های بررسی پروژه
+├── docs/                       # یادداشت‌های پروژه و پرامپت تصاویر
+├── index.html
+├── vite.config.js
+└── package.json
 ```
 
-برای اجرای فایل تحویلی، دوباره پروژه نسازید؛ ZIP را استخراج کنید و در پوشه‌ای که `package.json` قرار دارد، دستورهای زیر را بزنید.
+### اجرای محلی
 
-## اجرا
-
-Node.js 24 پیشنهاد می‌شود؛ نسخه استفاده‌شده برای build همین خانواده بوده است. نسخه هدف در `.nvmrc` ثبت شده است.
+به Node.js نسخهٔ ۲۲.۱۲ یا بالاتر نیاز است؛ Node.js 24 برای این پروژه پیشنهاد می‌شود.
 
 ```bash
 npm install
 npm run dev
 ```
 
-آدرس نمایش‌داده‌شده در ترمینال را در مرورگر باز کنید. برای نصب دقیق نسخه‌های ثبت‌شده در lockfile می‌توانید به‌جای `npm install` از `npm ci` استفاده کنید.
+برای نصب دقیق نسخه‌های ثبت‌شده در lockfile:
+
+```bash
+npm ci
+```
+
+### بررسی و build
 
 ```bash
 npm run check
@@ -27,80 +121,136 @@ npm run build
 npm run preview
 ```
 
-`check` ساختار محتوا، وجود تصاویر و مقصد لینک‌های داخلی را بررسی می‌کند. `build` خروجی قابل میزبانی را داخل `dist/` می‌سازد. `preview` همان خروجی را برای بررسی محلی سرو می‌کند؛ پیش از آن build بگیرید.
+خروجی قابل انتشار داخل پوشهٔ `dist/` ساخته می‌شود. بازکردن مستقیم `index.html` با دوبار کلیک توصیه نمی‌شود؛ زیرا داده‌ها با JavaScript و Fetch API بارگذاری می‌شوند.
 
-بازکردن مستقیم `index.html` با دوبار کلیک مناسب این نسخه نیست؛ JavaScript ماژولار و Fetch API باید از طریق سرور Vite یا هاست اجرا شوند.
+### انتشار
 
-## تکنولوژی‌ها
+انتشار پروژه با GitHub Actions انجام می‌شود. پس از push روی شاخهٔ `main`، workflow پروژه نصب وابستگی‌ها، بررسی، build و انتشار پوشهٔ `dist/` را انجام می‌دهد.
 
-- HTML و قالب‌های HTML در ماژول‌های JavaScript، بدون React یا Vue.
-- Vite برای توسعه و build.
-- Tailwind CSS 4 با افزونه رسمی `@tailwindcss/vite`، توکن‌های برند و کلاس‌های مشترک.
-- CSS اختصاصی برای صحنه‌ها، لایه‌های تیره، تایپوگرافی، واکنش‌گرایی و انیمیشن‌ها.
-- Vanilla JavaScript برای رندر، لودینگ، ناوبری و بازشدن توضیح تمرین‌ها.
-- Fetch API برای دریافت فایل محلی `public/data/site.json`؛ بدون بک‌اند، دیتابیس یا کلید API.
+برای انتقال به هاست استاتیک دیگر، کافی است بعد از اجرای `npm run build` محتویات پوشهٔ `dist/` را در ریشهٔ هاست، معمولاً `public_html`، قرار دهید.
 
-## ساختار
+### یادداشت طراحی
 
-| مسیر | کاربرد |
+تصاویر محیط و صحنه‌های تمرین برای ساخت فضای بصری پروژه تولید و بازسازی شده‌اند و لزوماً عکس مستند از امکانات واقعی آکادمی نیستند. زمان و محل دقیق تمرین عمداً در سایت نمایش داده نمی‌شود تا جزئیات در گفت‌وگوی مستقیم با خانواده بررسی شود.
+
+---
+
+## English
+
+### Project Overview
+
+Iran Sam is a client-facing, single-page introduction website for Iran Sam Football Academy. The goal was to replace a conventional informational page with a guided, story-driven digital experience.
+
+Visitors arrive through a QR Code and move through a sequence of visual chapters: an opening loader, the academy entrance, the locker room, the futsal training hall, the player-development journey, the progress report, the academy profile, and direct contact panels.
+
+The experience is designed for players aged **6–15** and uses a focused brand system built around **navy, orange and white**.
+
+### Portfolio Highlights
+
+- Translated a real client brief into a complete narrative landing-page experience
+- Built an RTL-first Persian interface with responsive behavior across screen sizes
+- Separated content from presentation with local JSON data and the Fetch API
+- Created independent mobile and desktop image compositions
+- Implemented loading, chapter navigation, scroll progress and interactive panels
+- Added contact, WhatsApp and FAQ flows without introducing a backend
+- Prepared an automated GitHub Pages deployment workflow
+- Organized the project as maintainable, reusable Vanilla JavaScript modules
+
+### User Journey
+
+| Chapter | Purpose |
 | --- | --- |
-| `index.html` | سند اصلی فارسی، metadata و نقطه ورود برنامه |
-| `vite.config.js` | اتصال Tailwind و تنظیم مسیر نسبی خروجی |
-| `public/data/site.json` | متن‌ها، ناوبری، رنگ کیت‌ها و آدرس تصاویر |
-| `public/images/` | لوگو، هشت تصویر برای چهار صحنه و هفت تصویر مسیر امکانات |
-| `src/main.js` | دریافت داده، نمایش صفحه و مدیریت خطا/تلاش دوباره |
-| `src/services/api.js` | Fetch، timeout و اعتبارسنجی محتوای JSON |
-| `src/components/` | header، صحنه‌ها، footer و لودینگ |
-| `src/components/development.js` | مسیر تصویری هفت ایستگاه آموزش و امکانات، و ساختار کارنامه پیشرفت |
-| `src/components/contact.js` | دکمه‌ها و پنل‌های شناور مستقل ارتباط و پرسش‌های متداول |
-| `src/features/experience.js` | تعامل‌ها و رفتار اسکرول و لودینگ |
-| `src/features/contact.js` | بازوبسته‌کردن پنل‌ها، بازگرداندن فوکوس و کلیک بیرون پنل |
-| `src/styles/main.css` | ورودی Tailwind و توکن‌های برند |
-| `src/styles/site.css` | استایل‌های اختصاصی تجربه بصری |
-| `src/styles/development.css` | مسیر امکانات با تصاویر دایره‌ای و اتصال منحنی، و طراحی کارنامه پیشرفت |
-| `src/styles/contact.css` | پنل‌ها و دکمه‌های شناور ارتباط و پرسش‌ها در موبایل و دسکتاپ |
-| `src/utils/` | امن‌سازی متن و ساخت مسیر فایل‌ها |
-| `src/assets/fonts/` | فونت Vazirmatn و مجوز آن |
-| `scripts/check.mjs` | بررسی محتوای پروژه قبل از انتشار |
-| `scripts/check-contact.mjs` | بررسی اعتبار اطلاعات تماس و مقصد لینک‌ها |
-| `.github/workflows/deploy.yml` | نصب، بررسی، build و انتشار روی Pages |
-| `docs/PROJECT-NOTES.md` | محدوده فعلی و راهنمای ادامه توسعه |
-| `docs/image-prompts.json` | توضیحات ساخت تصاویر صحنه‌ها |
+| Loading | A short, branded entry state triggered by the QR journey |
+| Story opening | Introduces Iran Sam and invites the visitor inside |
+| Academy entrance | Extends the narrative through guided calls to action |
+| Locker room | Presents the navy, orange and white kits |
+| Futsal training hall | Introduces the training environment and learning focus |
+| Development journey | Maps the broader player-development path and supporting facilities |
+| Progress report | Explains how player growth becomes visible and understandable |
+| About Iran Sam | Presents the academy, its management and educational perspective |
+| Contact and FAQ | Encourages direct conversation with the player’s family |
 
-## ویرایش
+### Technical Stack
 
-متن‌ها را در `public/data/site.json` تغییر دهید. نام و ترتیب شش بخش فعلی `intro`، `entrance`، `locker`، `training`، `development` و `progress` است. چهار بخش نخست تصاویر پس‌زمینه دارند؛ بخش پنجم مسیر هفت ایستگاه با عکس‌های دایره‌ای و اتصال منحنی است و بخش ششم کارنامه پیشرفت را معرفی می‌کند. آرایه `development.stations` شامل هفت عضو با `title`، `description` و `image` دارای `src` و `alt` است. `routeLabel` عنوان دسترس‌پذیر مسیر و `routeEnd` متن پایان آن است. ساختار ارزیابی در `cadence` و `report` قرار دارد. تغییر ساختار بخش‌ها نیازمند هماهنگ‌کردن renderer و validator نیز هست.
+- **HTML5** — semantic page structure and Persian content
+- **CSS3** — scenes, image overlays, animation and responsive layout
+- **Tailwind CSS 4** — design tokens and shared utility styles
+- **Vanilla JavaScript** — rendering, navigation and interaction logic
+- **Fetch API** — loading and validating `public/data/site.json`
+- **Vite** — local development and static production builds
+- **GitHub Actions** — automated build and GitHub Pages deployment
 
-برای تعویض تصاویر چهار صحنه نخست، نسخه افقی را در فیلد `desktop` و نسخه عمودیِ مستقل را در فیلد `mobile` قرار دهید. مسیرها با `images/` شروع می‌شوند؛ پیشوند `public/` ننویسید. انتخاب نسخه موبایل با عنصر `picture` انجام می‌شود. هفت تصویر مسیر امکانات با نام‌های `journey-*.webp` از `stations[].image.src` خوانده می‌شوند. پرامپت‌ها و مشخصات ساخت این تصاویر در [journey-image-prompts.json](docs/journey-image-prompts.json) ثبت شده‌اند. لایه تیره در CSS جداست و متن‌ها روی تصویر چاپ نشده‌اند.
+The site is fully static: it does not require a backend, database, CMS or API key.
 
-رنگ‌ها و فونت‌های Tailwind در `src/styles/main.css` تعریف شده‌اند. متغیرهای CSS صحنه‌ها نیز در ابتدای `site.css` قرار دارند؛ هنگام تغییر هویت رنگی هر دو را هماهنگ کنید. این نسخه Tailwind 4 است و به فایل‌های قدیمی `tailwind.config.js` یا `postcss.config.js` نیاز ندارد.
+### Project Structure
 
-لودینگ با بارگذاری تصویر اصلی مرتبط است، امکان ردکردن دارد و برای کاهش حرکت نیز رفتار مناسب دارد. Fetch در صورت شکست پیام خطا و دکمه تلاش دوباره نشان می‌دهد.
+```text
+iran-sam-vite/
+├── public/
+│   ├── data/site.json          # Content, navigation and experience settings
+│   └── images/                 # Logo, scene images and development journey assets
+├── src/
+│   ├── components/             # Header, scenes, footer, about and contact UI
+│   ├── features/               # Loading, scroll behavior and floating panels
+│   ├── services/               # Fetch and content validation
+│   ├── styles/                 # Tailwind entry and project-specific CSS
+│   ├── utils/                  # Path helpers and shared utilities
+│   └── main.js                 # Application entry point
+├── scripts/                    # Project validation scripts
+├── docs/                       # Project notes and image prompts
+├── index.html
+├── vite.config.js
+└── package.json
+```
 
-اطلاعات دو پنل در شیء `contact` داخل `public/data/site.json` قرار دارد. `phone` و `whatsapp` هر دو با شماره ارائه‌شده `09357472243` فعال‌اند. شماره‌های ایرانی با ارقام فارسی یا انگلیسی و پیش‌شماره داخلی یا بین‌المللی پذیرفته می‌شوند. فیلدهای اختیاری `address`، `mapUrl` و `hours` برای نشانی، لینک HTTPS نقشه و ساعت پاسخ‌گویی هنوز تکمیل نشده‌اند. اینستاگرام فعلاً حذف شده است. متن پرسش‌ها و پاسخ‌ها در `contact.faqs` و متن معرفی پنل پرسش‌ها در `faqEyebrow`، `faqTitle` و `faqDescription` قابل ویرایش‌اند.
+### Getting Started
 
-دکمه دایره‌ای سمت چپ پنل تماس و واتس‌اپ و دکمه سمت راست پنل مستقل پرسش‌های متداول را باز می‌کند. دکمه انتهای صفحه نیز پنل ارتباط را باز می‌کند. بستن هر پنل با دکمه، Escape و کلیک بیرون آن ممکن است. نشانی تا زمان تکمیل با پیام «به‌زودی» نمایش داده می‌شود و لینک نقشه پس از ورود آدرس معتبر فعال خواهد شد. دستور `npm run check:contact` اعتبار شماره‌ها، مقصد لینک‌ها و جدابودن محتوای دو پنل را بررسی می‌کند.
+Requires Node.js **22.12+**. Node.js 24 is recommended for this project.
 
-## GitHub Pages
+```bash
+npm install
+npm run dev
+```
 
-1. محتوای پوشه پروژه، شامل `.github` و `package-lock.json`، را در ریشه مخزن خود قرار دهید.
-2. کد را روی شاخه `main` push کنید؛ اگر نام شاخه متفاوت است، workflow را تغییر دهید.
-3. در `Settings → Pages → Build and deployment`، گزینه `Source` را روی `GitHub Actions` قرار دهید.
-4. اجرای workflow را در تب Actions بررسی کنید؛ پس از موفقیت، آدرس Pages در مخزن نمایش داده می‌شود.
+For a clean lockfile-based installation:
 
-workflow فقط پوشه ساخته‌شده `dist/` را منتشر می‌کند. `node_modules/` و `dist/` در سورس ZIP نیستند و با نصب/build ساخته می‌شوند. برای این صفحه بدون router، `base: './'` و مسیرهای نسبی، اجرای خروجی در زیرپوشه مخزن را ممکن می‌کنند.
+```bash
+npm ci
+```
 
-برای هاست‌های استاتیک دیگر، محتوای `dist/` را پس از build آپلود کنید. QR نهایی را پس از مشخص‌شدن دامنه و آدرس پایدار سایت بسازید.
+### Validation and Build
 
-## وضعیت تحویل
+```bash
+npm run check
+npm run build
+npm run preview
+```
 
-شش بخش فعلی، معرفی سن ۵ تا ۱۸ سال، مسیر تصویری آموزش و امکانات، ارزیابی هر سه ماه و دو پنل شناور مستقل ارتباط و پرسش‌های متداول پیاده شده‌اند. هفت ایستگاه مسیر شامل مربیان، سالن فوتسال و زمین‌های چمن، استخر، ژیمناستیک، دوومیدانی سرپوشیده، بدنسازی/TRX/کراس‌فیت و روان‌شناسی ورزشی است. کارنامه، محتوای گزارش را معرفی می‌کند و شامل نمره فرضی یا پرونده شخصی بازیکن نیست. بیوگرافی، عکس واقعی و ویدئوی مربی هنوز ارائه نشده‌اند؛ تصاویر مسیر، بازسازی مفهومی تولیدشده‌اند و عکس مستند مربیان یا امکانات واقعی نیستند. تماس و واتس‌اپ با شماره ارائه‌شده کارفرما فعال‌اند؛ نشانی، نقشه و ساعت پاسخ‌گویی پس از دریافت تکمیل می‌شوند. اینستاگرام فعلاً نمایش داده نمی‌شود.
+The production-ready output is generated in `dist/`. Use Vite or another local server instead of opening `index.html` directly, because the application loads its content through JavaScript and the Fetch API.
 
-`npm run check` و `npm run build` با موفقیت اجرا شده‌اند. صفحه در مرورگر Chrome با عرض‌های ۳۲۰، ۳۹۰، ۷۶۷، ۷۶۸، ۹۰۰، ۱۰۲۴ و ۱۴۴۰ پیکسل بررسی شده است؛ بیرون‌زدگی افقی و هم‌پوشانی منوی بالای صفحه مشاهده نشد. لینک‌های مسیر رشد و کارنامه، وضعیت فعال ناوبری موبایل و بازشدن توضیح تمرین‌ها بررسی شدند و خطایی در مرورگر ثبت نشد. ظاهر بخش‌های تازه نیز در موبایل و دسکتاپ بازبینی شده است. تصاویر صحنه‌ها ساخته‌شده‌اند و عکس مستند محل واقعی تمرین نیستند.
+### Deployment
 
-## مستندات رسمی
+The repository includes a GitHub Actions workflow that installs dependencies, validates the project, builds `dist/` and publishes it to GitHub Pages whenever the `main` branch is updated.
 
-- [Vite — Getting Started](https://vite.dev/guide/)
-- [Tailwind CSS — Using Vite](https://tailwindcss.com/docs/installation/using-vite)
-- [Vite — Static Deploy](https://vite.dev/guide/static-deploy.html)
-- [GitHub Pages — Custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
+The same `dist/` output can be uploaded to any static host. For a cPanel-based host, upload the contents of `dist/` directly into the document root, usually `public_html`.
+
+### Design Notes
+
+The visual direction uses a dark, premium football identity with navy, orange and white as the core colors. Background scenes are conceptually produced for the experience and should not be interpreted as documentary photographs of the academy’s real facilities. Training time and location are intentionally kept for direct conversation with families.
+
+### Demo
+
+**Live website:** [eh3un.github.io/IranSam](https://eh3un.github.io/IranSam/)
+
+### Project Role
+
+**Design direction · Front-end implementation · Responsive UI · Interaction design · GitHub Pages deployment**
+
+---
+
+## Official References
+
+- [Vite Documentation](https://vite.dev/guide/)
+- [Tailwind CSS with Vite](https://tailwindcss.com/docs/installation/using-vite)
+- [Vite Static Deployment](https://vite.dev/guide/static-deploy.html)
+- [GitHub Pages Custom Workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
