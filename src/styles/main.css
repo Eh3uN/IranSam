@@ -2,6 +2,7 @@
 @import "./site.css";
 @import "./development.css";
 @import "./contact.css";
+@import "./about.css";
 
 @theme {
   --color-brand-navy: #071a2c;

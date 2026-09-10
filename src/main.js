@@ -3,6 +3,7 @@ import { fetchSiteData } from './services/api.js';
 import { renderHeader, renderLoader, renderMobileNavigation } from './components/header.js';
 import { renderSections } from './components/sections.js';
 import { renderFooter } from './components/footer.js';
+import { renderAbout } from './components/about.js';
 import { renderContact } from './components/contact.js';
 import { initializeExperience } from './features/experience.js';
 import { initializeContact } from './features/contact.js';
@@ -31,7 +32,8 @@ async function startApp() {
       ${renderHeader(data)}
       <main id="main-content">${renderSections(data)}${renderFooter(data)}</main>
       ${renderMobileNavigation(data.navigation)}
-      ${renderContact(data)}`;
+      ${renderContact(data)}
+      ${renderAbout(data)}`;
     app.setAttribute('aria-busy', 'false');
     initializeExperience();
     initializeContact();

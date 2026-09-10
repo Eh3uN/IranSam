@@ -349,93 +349,94 @@
   gap:clamp(40px,6vw,100px);
 }
 
+.progress-subtitle {
+  max-width:560px;
+  margin:20px 0 0;
+  color:#f4f7fa;
+  font-size:clamp(17px,1.55vw,22px);
+  font-weight:650;
+  line-height:2;
+}
+
+.progress-overview {
+  max-width:580px;
+  margin-top:26px;
+}
+
 .progress-description {
-  max-width:530px;
-  margin:26px 0 32px;
+  max-width:580px;
+  margin:0;
   color:#d0dbe5;
   font-size:17px;
   line-height:2.15;
 }
 
-.assessment-cadence {
-  display:flex;
-  align-items:center;
-  gap:24px;
-  padding:24px 0;
-  border-block:1px solid var(--border);
-}
-
-.cadence-number {
-  display:flex;
-  align-items:baseline;
-  gap:8px;
-  white-space:nowrap;
-  line-height:1.3;
-}
-
-.cadence-number strong {
-  font-size:84px;
-  font-weight:800;
-  color:var(--orange);
-}
-
-.cadence-number span {
-  font-size:17px;
-}
-
-.assessment-cadence h3 {
-  margin:0 0 7px;
-  font-size:16px;
-  font-weight:700;
-  line-height:1.9;
-}
-
-.assessment-cadence p {
-  margin:0;
-  font-size:13px;
-  color:#b9cad9;
-}
-
-.family-note {
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:13px;
-  color:#b9cad9;
-  margin:24px 0 0;
-}
-
-.family-note .tiny-line {
-  flex:none;
+.progress-description-secondary {
+  margin-top:22px;
+  padding-top:22px;
+  border-top:1px solid var(--border);
 }
 
 .progress-report {
-  color:var(--navy);
-  padding:32px;
-  background:#f9faf6;
-  border-top:4px solid var(--orange);
-  box-shadow:-14px 14px 0 rgba(255,255,255,.035),0 20px 70px rgba(0,0,0,.15);
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  color:var(--white);
+  padding:34px;
+  background:linear-gradient(145deg,rgba(18,53,79,.96),rgba(5,20,34,.98));
+  border:1px solid rgba(192,213,231,.2);
+  border-inline-start:3px solid var(--orange);
+  box-shadow:-14px 14px 0 rgba(255,255,255,.035),0 22px 70px rgba(0,0,0,.24);
+}
+
+.progress-report:before {
+  content:"";
+  position:absolute;
+  z-index:0;
+  top:-132px;
+  left:-98px;
+  width:290px;
+  height:290px;
+  border:1px solid rgba(255,130,16,.2);
+  border-radius:50%;
+  box-shadow:0 0 0 18px rgba(255,130,16,.035),0 0 0 38px rgba(255,255,255,.025);
+  pointer-events:none;
+}
+
+.progress-report:after {
+  content:"IRAN SAM / PROGRESS";
+  position:absolute;
+  z-index:0;
+  left:30px;
+  bottom:19px;
+  color:rgba(192,213,231,.22);
+  font:11px/1 Arial,sans-serif;
+  letter-spacing:.18em;
+  pointer-events:none;
 }
 
 .report-top {
+  position:relative;
+  z-index:1;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:18px;
   padding-bottom:24px;
-  border-bottom:1px solid #d9dfdc;
+  border-bottom:1px solid rgba(192,213,231,.2);
 }
 
 .report-eyebrow {
   margin:0 0 4px;
   font-size:12px;
-  color:#59666d;
+  color:#ffad68;
 }
 
 .report-top h3 {
   margin:0;
   font-size:26px;
   font-weight:850;
+  color:var(--white);
 }
 
 .report-top img {
@@ -444,15 +445,23 @@
   height:62px;
   object-fit:contain;
   border-radius:3px;
+  padding:5px;
+  background:#fff;
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:0 8px 22px rgba(0,0,0,.22);
 }
 
 .report-caption {
+  position:relative;
+  z-index:1;
   margin:22px 0;
-  color:#59666d;
+  color:#c0cedb;
   font-size:13px;
 }
 
 .report-steps {
+  position:relative;
+  z-index:1;
   list-style:none;
   margin:0;
   padding:0;
@@ -472,7 +481,7 @@
   inset-inline-start:18px;
   top:36px;
   bottom:0;
-  border-inline-start:1px dashed #b8c3c2;
+  border-inline-start:1px dashed rgba(255,130,16,.42);
 }
 
 .report-step-number {
@@ -481,21 +490,22 @@
   flex:none;
   width:37px;
   height:37px;
-  background:#e9eee9;
-  color:#3e554e;
-  border:1px solid #d6ded7;
+  background:rgba(255,130,16,.1);
+  color:var(--orange);
+  border:1px solid rgba(255,130,16,.5);
   border-radius:50%;
   font-size:16px;
   font-weight:700;
 }
 
 .report-steps li:last-child .report-step-number {
-  color:#8f4104;
-  border-color:#edcfb4;
-  background:#f7e8d8;
+  color:var(--navy);
+  border-color:var(--orange);
+  background:var(--orange);
 }
 
 .report-steps h4 {
+  color:var(--white);
   margin:3px 0 6px;
   font-size:17px;
   font-weight:800;
@@ -506,23 +516,25 @@
   margin:0;
   font-size:14px;
   line-height:2;
-  color:#52606a;
+  color:#bdcddd;
 }
 
 .report-footnote {
+  position:relative;
+  z-index:1;
   display:flex;
   align-items:center;
   gap:12px;
   margin:0;
   padding-top:16px;
-  border-top:1px solid #d9dfdc;
+  border-top:1px solid rgba(192,213,231,.2);
   font-size:13px;
   font-weight:600;
-  color:#52606a;
+  color:#c0cedb;
 }
 
 .report-footnote>span {
-  color:#a64a00;
+  color:var(--orange);
   font-size:23px;
 }
 
@@ -536,19 +548,6 @@
   }
   .progress-report {
     padding:26px;
-  }
-  .assessment-cadence {
-    gap:18px;
-  }
-  .cadence-number strong {
-    font-size:68px;
-  }
-}
-
-@media(min-width:768px) and (max-width:900px) {
-  .assessment-cadence {
-    flex-wrap:wrap;
-    gap:12px;
   }
 }
 
@@ -572,6 +571,13 @@
   .development-intro-copy>p,.progress-description {
     font-size:16px;
     max-width:none;
+  }
+  .progress-subtitle {
+    margin-top:16px;
+    font-size:16px;
+  }
+  .progress-overview {
+    margin-top:22px;
   }
   .development-intro-copy {
     margin-top:24px;
@@ -647,25 +653,11 @@
     gap:36px;
   }
   .progress-description {
-    margin:20px 0 26px;
+    font-size:16px;
   }
-  .assessment-cadence {
-    padding:18px 0;
-  }
-  .assessment-cadence h3 {
-    font-size:14px;
-  }
-  .assessment-cadence p {
-    font-size:12px;
-  }
-  .cadence-number strong {
-    font-size:64px;
-  }
-  .cadence-number span {
-    font-size:15px;
-  }
-  .family-note {
-    font-size:12px;
+  .progress-description-secondary {
+    margin-top:18px;
+    padding-top:18px;
   }
   .progress-report {
     padding:25px;
@@ -692,17 +684,5 @@
 @media(max-width:359px) {
   .progress-report {
     padding:20px;
-  }
-  .assessment-cadence {
-    gap:12px;
-  }
-  .cadence-number {
-    gap:5px;
-  }
-  .cadence-number strong {
-    font-size:54px;
-  }
-  .assessment-cadence h3 {
-    font-size:13px;
   }
 }

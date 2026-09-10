@@ -154,7 +154,7 @@ em {
   font-weight:600
 }
 
-.desktop-nav a {
+.desktop-nav a,.desktop-nav-about {
   position:relative;
   display:flex;
   align-items:center;
@@ -164,7 +164,15 @@ em {
   transition:color .2s
 }
 
-.desktop-nav a:after {
+.desktop-nav-about {
+  border:0;
+  padding:0;
+  background:transparent;
+  font:inherit;
+  cursor:pointer
+}
+
+.desktop-nav a:after,.desktop-nav-about:after {
   content:"";
   position:absolute;
   bottom:1px;
@@ -175,11 +183,11 @@ em {
   transition:width .25s
 }
 
-.desktop-nav a.is-active:after,.desktop-nav a:hover:after {
+.desktop-nav a.is-active:after,.desktop-nav a:hover:after,.desktop-nav-about:hover:after,.desktop-nav-about:focus-visible:after {
   width:100%
 }
 
-.desktop-nav a.is-active,.desktop-nav a:hover {
+.desktop-nav a.is-active,.desktop-nav a:hover,.desktop-nav-about:hover,.desktop-nav-about:focus-visible {
   color:white
 }
 
@@ -634,9 +642,14 @@ details[open] .details-sign:after {
 }
 
 .closing-note .eyebrow {
+  display:block;
   justify-content:center;
   color:#bfccd9;
   margin-bottom:17px
+}
+
+.closing-note .eyebrow>span {
+  display:inline-block
 }
 
 .closing-title {
@@ -647,10 +660,98 @@ details[open] .details-sign:after {
   letter-spacing:0
 }
 
-.closing-note>p:not(.closing-title):not(.eyebrow) {
+.closing-copy {
+  max-width:680px;
+  margin:0 auto 25px;
+  color:#c7d2de
+}
+
+.closing-copy p {
+  margin:0;
   font-size:16px;
-  color:#c7d2de;
-  margin-bottom:65px
+  line-height:2.05
+}
+
+.closing-copy p+p {
+  margin-top:24px;
+  padding-top:19px;
+  border-top:1px solid rgba(255,255,255,.16)
+}
+
+.closing-copy .closing-cta-copy {
+  color:#fff;
+  font-size:clamp(17px,1.5vw,20px);
+  font-weight:900
+}
+
+.closing-actions {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:0 auto 58px
+}
+
+.contact-action-cluster {
+  display:flex;
+  align-items:center;
+  gap:13px
+}
+
+.closing-availability {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:58px;
+  padding:8px 12px;
+  border:1px solid rgba(255,130,16,.42);
+  border-radius:4px;
+  background:rgba(255,130,16,.08);
+  color:#f6d1ae;
+  text-align:right
+}
+
+.availability-icon {
+  display:grid;
+  place-items:center;
+  flex:none;
+  width:31px;
+  height:31px;
+  border:1px solid rgba(255,130,16,.5);
+  border-radius:50%;
+  color:var(--orange)
+}
+
+.availability-icon svg {
+  width:17px;
+  height:17px
+}
+
+.availability-copy {
+  display:flex;
+  flex-direction:column;
+  gap:1px;
+  line-height:1.65
+}
+
+.availability-copy strong {
+  color:#fff;
+  font-size:12px;
+  font-weight:800
+}
+
+.availability-copy small {
+  color:#e4b88d;
+  font-size:10px
+}
+
+.closing-actions .button {
+  min-width:218px
+}
+
+.closing-actions .button-primary em {
+  color:var(--navy)
 }
 
 .closing-bottom {
@@ -1071,9 +1172,36 @@ details[open] .details-sign:after {
     font-size:29px;
     line-height:1.65
   }
-  .closing-note>p:not(.closing-title):not(.eyebrow) {
-    font-size:15px;
+  .closing-copy {
+    margin-bottom:21px
+  }
+  .closing-copy p {
+    font-size:15px
+  }
+  .closing-copy p+p {
+    margin-top:18px;
+    padding-top:15px
+  }
+  .closing-copy .closing-cta-copy {
+    font-size:16px
+  }
+  .closing-actions {
+    gap:9px;
     margin-bottom:37px
+  }
+  .contact-action-cluster {
+    width:100%;
+    flex-direction:column-reverse;
+    gap:10px
+  }
+  .closing-availability {
+    width:100%;
+    justify-content:center;
+    text-align:center
+  }
+  .closing-actions .button {
+    width:100%;
+    min-width:0
   }
   .closing-bottom {
     flex-direction:column;

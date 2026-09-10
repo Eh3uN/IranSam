@@ -44,13 +44,17 @@ export function validateSiteData(data) {
   development.stations.forEach(station => publicPath(station.image.src));
   if (!development.cta) throw new Error('Missing development destination');
   const progress = data.sections[5];
-  if (!isText(progress.familyNote) || !['prefix', 'value', 'unit', 'title', 'description'].every(key => isText(progress.cadence?.[key]))) {
-    throw new Error('Invalid assessment cadence');
+  if (!isText(progress.subtitle) || progress.description.length !== 2) {
+    throw new Error('Invalid progress overview');
   }
   if (!['eyebrow', 'title', 'caption', 'footer'].every(key => isText(progress.report?.[key])) || !Array.isArray(progress.report.steps) || progress.report.steps.length !== 3 || !progress.report.steps.every(step => isText(step.title) && isText(step.description))) {
     throw new Error('Invalid progress report');
   }
-  if (!isLines(data.closing?.description) || !isText(data.loader?.title)) throw new Error('Invalid closing or loading content');
+  const about = data.about;
+  if (!about || !isText(about.eyebrow) || !isText(about.title) || !isText(about.lead) || !isText(about.closing) || !isLines(about.paragraphs) || about.paragraphs.length < 4 || !about.profile || !isText(about.profile.name) || !isText(about.profile.role) || !isText(about.profile.description) || !Array.isArray(about.profile.credentials) || about.profile.credentials.length < 3 || !about.profile.credentials.every(isText) || !Array.isArray(about.highlights) || about.highlights.length !== 3 || !about.highlights.every(item => isText(item?.title) && isText(item?.description))) {
+    throw new Error('Invalid about content');
+  }
+  if (!isLines(data.closing?.description) || !isText(data.closing?.availability?.label) || !isText(data.closing?.availability?.caption) || !isText(data.loader?.title)) throw new Error('Invalid closing or loading content');
   validateContactData(data.contact);
   return data;
 }

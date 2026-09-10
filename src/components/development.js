@@ -5,6 +5,10 @@ function chapter(section, index) {
   return `<p class="eyebrow"><span class="chapter-tag" dir="ltr">${counter(index)}</span>${e(section.eyebrow)}</p>`;
 }
 
+function highlightSam(text) {
+  return e(text).replace(/ایران سام/g, 'ایران <em>سام</em>');
+}
+
 function sectionFooter(section, index, total) {
   return `<div class="scene-bottom editorial-bottom">
     <span lang="en" dir="ltr">${e(section.footer.english)}</span>
@@ -59,22 +63,22 @@ export function renderDevelopment(section, index, total) {
 }
 
 export function renderProgress(section, index, total, brand) {
+  const progressTitle = e(section.title).replace('مسیر', '<em>مسیر</em>');
+  const progressAccent = e(section.accent).replace('ببین', '<em>ببین</em>');
   return `<section id="${e(section.id)}" class="progress-section" aria-labelledby="${e(section.id)}-heading" data-scene="${e(section.id)}">
     <div class="editorial-container">
       <div class="progress-layout">
         <div class="progress-copy">
           ${chapter(section, index)}
-          <h2 id="${e(section.id)}-heading">${e(section.title)}<br><em>${e(section.accent)}</em></h2>
-          ${section.description.map(text => `<p class="progress-description">${e(text)}</p>`).join('')}
-          <div class="assessment-cadence">
-            <div class="cadence-number"><span>${e(section.cadence.prefix)}</span><strong>${e(section.cadence.value)}</strong><span>${e(section.cadence.unit)}</span></div>
-            <div><h3>${e(section.cadence.title)}</h3><p>${e(section.cadence.description)}</p></div>
+          <h2 id="${e(section.id)}-heading">${progressTitle}<br>${progressAccent}</h2>
+          ${section.subtitle ? `<p class="progress-subtitle">${e(section.subtitle)}</p>` : ''}
+          <div class="progress-overview">
+            ${section.description.map((text, textIndex) => `<p class="progress-description${textIndex ? ' progress-description-secondary' : ''}">${highlightSam(text)}</p>`).join('')}
           </div>
-          <p class="family-note"><span class="tiny-line" aria-hidden="true"></span>${e(section.familyNote)}</p>
         </div>
         <article class="progress-report" aria-labelledby="report-heading">
           <div class="report-top">
-            <div><p class="report-eyebrow">${e(section.report.eyebrow)}</p><h3 id="report-heading">${e(section.report.title)}</h3></div>
+            <div><p class="report-eyebrow">${e(section.report.eyebrow)}</p><h3 id="report-heading">${highlightSam(section.report.title)}</h3></div>
             <img src="${e(publicPath(brand.logo))}" alt="${e(brand.name)}" width="62" height="62" loading="lazy" decoding="async">
           </div>
           <p class="report-caption">${e(section.report.caption)}</p>

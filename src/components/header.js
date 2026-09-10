@@ -11,6 +11,7 @@ export function renderHeader({ brand, navigation }) {
       </a>
       <nav class="desktop-nav" aria-label="بخش‌های صفحه">
         ${navigation.map((item, index) => `<a href="#${e(item.id)}" data-chapter="${e(item.id)}" ${index === 0 ? 'class="is-active" aria-current="location"' : ''}>${e(item.label)}</a>`).join('')}
+        <button class="desktop-nav-about" type="button" data-open-panel="about-panel" aria-haspopup="dialog" aria-controls="about-panel" aria-expanded="false">درباره ما</button>
       </nav>
       <span class="age-label"><span>${e(brand.ageRange)}</span> ${e(brand.ageUnit)}</span>
     </header>`;

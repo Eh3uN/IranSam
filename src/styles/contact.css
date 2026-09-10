@@ -395,8 +395,7 @@ a.contact-channel:hover {
 }
 
 .contact-footer-button {
-  margin-top:-35px;
-  margin-bottom:48px;
+  margin:0
 }
 
 @keyframes contactArrival {
@@ -449,8 +448,7 @@ a.contact-channel:hover {
     transform:scale(.95);
   }
   .contact-footer-button {
-    margin-top:-10px;
-    margin-bottom:34px;
+    margin:0
   }
 }
 
