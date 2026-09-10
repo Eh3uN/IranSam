@@ -21,7 +21,15 @@ export function renderAbout({ about, brand }) {
         <p class="about-lead" id="about-lead">${highlightBrand(about.lead)}</p>
         <section class="about-profile" aria-labelledby="about-profile-heading">
           <div class="about-profile-heading">
-            <span class="about-profile-mark" aria-hidden="true"><img class="rounded-full" src="./public/images/Hesam.jpg" alt=""></span>
+            <span class="about-profile-mark" aria-hidden="true"><img
+  class="rounded-full"
+  src="${e(publicPath("images/Hesam.jpg"))}"
+  alt="محمد حسام خدابنده، مدیر آکادمی فوتبال ایران سام"
+  width="96"
+  height="96"
+  loading="lazy"
+/>
+</span>
             <div><p>${e(about.profile.role)}</p><h3 id="about-profile-heading">${e(about.profile.name)}</h3></div>
           </div>
           <p class="about-profile-description">${e(about.profile.description)}</p>

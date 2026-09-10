@@ -10,7 +10,7 @@ const contact = {
   faqEyebrow: 'پیش از شروع مسیر',
   faqTitle: 'سوالات متداول',
   faqDescription: 'پاسخ پرسش‌های شما درباره تمرین و رشد در ایران سام',
-  faqs: [{ question: 'روند رشد چگونه ارزیابی می‌شود؟', answer: 'هر سه ماه یک بار.' }],
+  faqs: [{ question: 'روند رشد چگونه ارزیابی می‌شود؟', answer: ' با کارنامه و ارزیابی پیشرفت دقیق بازیکنان.' }],
 };
 
 assert.equal(validateContactData(contact), contact);
