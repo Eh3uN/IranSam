@@ -1,8 +1,13 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
 @import "./site.css";
 @import "./development.css";
 @import "./contact.css";
 @import "./about.css";
+
+/* Scan markup sources; runtime logic, tests and docs do not define utilities. */
+@source "../components";
+@source "../main.js";
+@source "../../index.html";
 
 @theme {
   --color-brand-navy: #071a2c;

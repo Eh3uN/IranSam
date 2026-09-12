@@ -7,8 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "node scripts/check.mjs",
-    "check:contact": "node scripts/check-contact.mjs"
+    "check": "node scripts/check.mjs && npm run check:data && npm run check:contact && npm run check:experience",
+    "check:data": "node scripts/check-data.mjs",
+    "check:contact": "node scripts/check-contact.mjs",
+    "check:experience": "node scripts/check-experience.mjs"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",

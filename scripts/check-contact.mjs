@@ -44,14 +44,14 @@ assert.ok(pendingHtml.includes('نشانی و مسیر دسترسی به‌زو�
 assert.ok(!pendingHtml.includes('class="contact-hours"'));
 assert.ok(!/href="(?:|#)"/.test(pendingHtml), 'Pending channels must not create dead links');
 const realNumbers = { phone: '09022005603', whatsapp: '09021005603' };
-assert.deepEqual(getContactLinks(realNumbers), { phone: 'tel:+989021005603', whatsapp: 'https://wa.me/989021005603', map: '' });
+assert.deepEqual(getContactLinks(realNumbers), { phone: 'tel:+989022005603', whatsapp: 'https://wa.me/989021005603', map: '' });
 const linkedHtml = renderContact({ brand, contact: {
   ...contact,
   ...realNumbers,
   address: '<script>alert(1)</script>',
   mapUrl: 'https://maps.google.com/?q=Tehran',
 } });
-for (const href of ['tel:+989021005603', 'https://wa.me/989021005603', 'https://maps.google.com/?q=Tehran']) {
+for (const href of ['tel:+989022005603', 'https://wa.me/989021005603', 'https://maps.google.com/?q=Tehran']) {
   assert.ok(linkedHtml.includes(`href="${href}"`), `Missing configured contact destination: ${href}`);
 }
 assert.ok(!linkedHtml.includes('<script>'), 'Address must render as text');
@@ -69,7 +69,7 @@ for (const html of [pendingHtml, linkedHtml]) {
   assert.ok(faqPanel.includes(contact.faqs[0].answer));
   assert.ok(!faqPanel.includes('contact-channel-'), 'Contact channels belong only in the contact dialog');
   assert.ok(!/instagram|اینستاگرام/i.test(html), 'Instagram must not be rendered');
-  for (const href of ['tel:+989021005603', 'https://wa.me/989021005603']) {
+  for (const href of ['tel:+989022005603', 'https://wa.me/989021005603']) {
     assert.ok(!faqPanel.includes(`href="${href}"`), 'FAQ dialog must not contain contact links');
     if (html === linkedHtml) assert.ok(contactPanel.includes(`href="${href}"`));
   }

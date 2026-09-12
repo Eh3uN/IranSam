@@ -21,7 +21,7 @@
 
 کاربر از طریق QR Code وارد یک مسیر هدایت‌شده می‌شود: ابتدا صفحهٔ لودینگ و شروع داستان را می‌بیند، سپس وارد فضای آکادمی، رختکن و سالن تمرین می‌شود و در ادامه با برنامهٔ رشد، امکانات، کارنامهٔ پیشرفت، معرفی آکادمی و راه‌های ارتباطی آشنا می‌شود.
 
-این پروژه برای ردهٔ سنی **۶ تا ۱۵ سال** طراحی شده و هویت بصری آن بر پایهٔ ترکیب **سرمه‌ای، نارنجی و سفید** شکل گرفته است.
+این پروژه برای ردهٔ سنی **۵ تا ۱۸ سال** طراحی شده و هویت بصری آن بر پایهٔ ترکیب **سرمه‌ای، نارنجی و سفید** شکل گرفته است.
 
 ### ارزش پروژه برای رزومه
 
@@ -121,6 +121,8 @@ npm run build
 npm run preview
 ```
 
+دستور `npm run check` محتوای صفحه، همهٔ تصاویر و مقصدهای دسترس‌پذیری، اعتبارسنجی داده‌های ناقص، لینک‌های ارتباطی و رفتار اسکرول را بررسی می‌کند. همین مجموعه بررسی‌ها پیش از انتشار خودکار اجرا می‌شود.
+
 خروجی قابل انتشار داخل پوشهٔ `dist/` ساخته می‌شود. بازکردن مستقیم `index.html` با دوبار کلیک توصیه نمی‌شود؛ زیرا داده‌ها با JavaScript و Fetch API بارگذاری می‌شوند.
 
 ### انتشار
@@ -143,7 +145,7 @@ Iran Sam is a client-facing, single-page introduction website for Iran Sam Footb
 
 Visitors arrive through a QR Code and move through a sequence of visual chapters: an opening loader, the academy entrance, the locker room, the futsal training hall, the player-development journey, the progress report, the academy profile, and direct contact panels.
 
-The experience is designed for players aged **6–15** and uses a focused brand system built around **navy, orange and white**.
+The experience is designed for players aged **5–18** and uses a focused brand system built around **navy, orange and white**.
 
 ### Portfolio Highlights
 
@@ -225,6 +227,8 @@ npm run check
 npm run build
 npm run preview
 ```
+
+`npm run check` verifies rendered content, all image assets and accessibility references, malformed content rejection, contact links, and scroll behavior. The deployment workflow runs the same complete suite before publishing.
 
 The production-ready output is generated in `dist/`. Use Vite or another local server instead of opening `index.html` directly, because the application loads its content through JavaScript and the Fetch API.
 

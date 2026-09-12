@@ -9,17 +9,19 @@ import { renderAbout } from '../src/components/about.js';
 
 const root = new URL('../', import.meta.url);
 const data = validateSiteData(JSON.parse(await readFile(new URL('public/data/site.json', root), 'utf8')));
-const assets = [data.brand.logo, ...data.sections.flatMap(section => [
-  ...(section.image ? [section.image.desktop, section.image.mobile] : []),
-  ...(section.stations?.map(station => station.image.src) ?? []),
-])];
-await Promise.all(assets.map(path => access(new URL(`public/${path}`, root))));
 const sectionsHtml = renderSections(data);
 const html = renderHeader(data) + renderLoader(data) + sectionsHtml + renderFooter(data) + renderMobileNavigation(data.navigation) + renderContact(data) + renderAbout(data);
+// Include every rendered image, including portraits outside the section data.
+const assets = [...new Set([...html.matchAll(/<(?:img|source)\b[^>]*\bsrc(?:set)?="([^"]+)"/g)]
+  .flatMap(([, value]) => value.split(',').map(candidate => candidate.trim().split(/\s+/)[0])))];
+await Promise.all(assets.map(path => access(new URL(path, new URL('public/', root)))));
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 assert.equal(new Set(ids).size, ids.length, 'Duplicate HTML ids');
 for (const [, target] of html.matchAll(/href="#([^"]+)"/g)) {
   assert.ok(ids.includes(target), `Missing anchor destination: ${target}`);
+}
+for (const [, references] of html.matchAll(/aria-(?:labelledby|describedby|controls)="([^"]+)"/g)) {
+  for (const target of references.split(/\s+/)) assert.ok(ids.includes(target), `Missing accessibility destination: ${target}`);
 }
 assert.equal((sectionsHtml.match(/<section /g) ?? []).length, data.sections.length, 'Expected all story and development sections');
 assert.ok(!html.includes('undefined'), 'Incomplete content rendered');

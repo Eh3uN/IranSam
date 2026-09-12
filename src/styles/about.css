@@ -60,6 +60,10 @@
   background:linear-gradient(180deg,#fafbf8 0%,#f2f5f0 100%)
 }
 
+.about-panel-body em {
+  color:#a34a00
+}
+
 .about-lead {
   max-width:640px;
   margin:0 0 26px;

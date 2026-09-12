@@ -44,18 +44,31 @@ export function initializeExperience() {
   const links = [...document.querySelectorAll('[data-chapter]')];
   const progress = document.getElementById('journey-progress');
   let framePending = false;
+  let activeChapter;
+  let previousProgress = -1;
   function updateJourney() {
-    const focusLine = window.scrollY + window.innerHeight * 0.46;
+    // Read layout before updating navigation or the progress indicator.
+    const scrollY = window.scrollY;
+    const viewportHeight = window.innerHeight;
+    const focusLine = scrollY + viewportHeight * 0.46;
     let active = scenes[0]?.id;
     for (const scene of scenes) if (scene.offsetTop <= focusLine) active = scene.id;
-    for (const link of links) {
-      const selected = link.dataset.chapter === active;
-      link.classList.toggle('is-active', selected);
-      if (selected) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
+    const scrollable = document.documentElement.scrollHeight - viewportHeight;
+    const ratio = scrollable > 0 ? Math.min(1, Math.max(0, scrollY / scrollable)) : 1;
+
+    if (active !== activeChapter) {
+      for (const link of links) {
+        const selected = link.dataset.chapter === active;
+        link.classList.toggle('is-active', selected);
+        if (selected) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      }
+      activeChapter = active;
     }
-    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    if (progress) progress.style.width = `${scrollable > 0 ? Math.min(100, Math.max(0, window.scrollY / scrollable * 100)) : 100}%`;
+    if (progress && ratio !== previousProgress) {
+      progress.style.transform = `scaleX(${ratio})`;
+      previousProgress = ratio;
+    }
     framePending = false;
   }
   function scheduleUpdate() {

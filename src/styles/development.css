@@ -24,14 +24,11 @@
 
 .training-next {
   color:#e2e9f0;
+  margin-top:24px;
 }
 
 .training-next:hover {
   color:var(--orange);
-}
-
-.training-next {
-  margin-top:24px;
 }
 
 .development-section,.progress-section {
@@ -557,7 +554,6 @@
   }
   .progress-layout {
     grid-template-columns:minmax(0,1fr);
-    gap:26px;
   }
   .development-intro {
     margin-bottom:30px;
